@@ -11,3 +11,6 @@ There are a few other rules to incentivize being risky:
 
 ## Bots:
 Playing alone is no fun. I've added a few bots to try your luck with. There are some that implement a certain strategy to maximize their earnings, others that play randomly, and one that implements a Q Learning algorithm. The Q Learning bot can be trained and played against for a difficult challenge.
+
+## Run:
+Use command: "python3 main.py" to run the game. It will give a list of tags to create a version of the game with opponents or for ML training.
