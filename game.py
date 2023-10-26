@@ -2,13 +2,14 @@ import random
 
 
 class Game:
-    def __init__(self, players):
+    def __init__(self, players, showScores=False):
         self.players = players
         self.inPlay = players.copy()
         self.pool = 0
         self.roundNum = 0
         self.rollNum = 0
         self.bust = False
+        self.showScores = showScores
 
     def play(self):
         while self.roundNum < 15:
@@ -55,6 +56,18 @@ class Game:
         self.bust = False
         self.inPlay = self.players.copy()
         self.roundNum += 1
+        if self.showScores:
+            self.showRoundScores()
+
+    def showRoundScores(self):
+        print(f"Scores for round {self.roundNum-1}:")
+        for player in self.players:
+            print(f"{player.name}: {player.score}")
+
+    def showGameScores(self):
+        print("Final Scores:")
+        for player in self.players:
+            print(f"{player.name}: {player.score}")
 
     def getDiceRolls(self):
         dice1 = random.randint(1, 6)

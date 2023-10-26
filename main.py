@@ -31,7 +31,7 @@ def printHelpScript():
 
 def trainML():
     ml = rl_player.RL_Player("QLearningPlayer")
-    ml.train()
+    ml.train(True)
 
 
 def main():
@@ -43,7 +43,9 @@ def main():
 
     match argv[1]:
         case "-m":
-            players.append(getMLPlayer())
+            mlPlayer = getMLPlayer()
+            mlPlayer.train()
+            players.append(mlPlayer)
             players.append(player.UserPlayer("UserPlayer"))
         case "-g":
             players.extend(getOtherPlayers())
@@ -54,7 +56,7 @@ def main():
         case "-s":
             players.append(player.UserPlayer("UserPlayer"))
 
-    bank_game = game.Game(players)
+    bank_game = game.Game(players, True)
 
     bank_game.play()
 

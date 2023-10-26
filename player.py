@@ -28,7 +28,6 @@ class UserPlayer(Player):
         output = input(f"Bank? Pool: {pool}, Round: {roundNum} (Y/N): ")
 
         if output.lower() == "y":
-            print(f"Banked, new score: {self.score + pool}")
             return True
         else:
             return False
