@@ -8,7 +8,7 @@ class RL_Player(player.Player):
         self.score = 0
         self.name = name
         self.winCount = 0
-        self.stateSpace = state_space.StateSpace(learningRate, discount, 25)
+        self.stateSpace = state_space.StateSpace(learningRate, discount, 10)
         self.isTrained = False
 
     def banks(self, pool, roundNum, rollNum):
@@ -36,7 +36,7 @@ class RL_Player(player.Player):
 
 
 def main():
-    learningRate = 0.01
+    learningRate = 0.1
     discountRate = 0.99
     trainingPlayer = RL_Player("RL_Player", discountRate, learningRate)
 
